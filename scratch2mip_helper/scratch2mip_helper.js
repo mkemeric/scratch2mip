@@ -108,3 +108,13 @@ dispatcher.onGet('/left', function(req, res) {
     console.log('Drive to Left ' + degrees + ' degrees');
   });
 });
+
+dispatcher.onGet('/talk', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('talk');
+  var sound= getQueryObj(req).sound;
+
+  selectedRobot.playMipSound(sound, 1, 8,function(err) {
+    console.log('Play sound ' + sound + "at " + volume );
+  });
+});

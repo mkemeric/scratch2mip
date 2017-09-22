@@ -27,6 +27,11 @@
         $.get('http://localhost:8080/backward?steps=' + steps, null, function() {
             console.log('move backward ' + steps + ' steps');
         });
+
+    ext.sound = function(sound) {
+        $.get('http://localhost:8080/backward?sound=' + sound, null, function() {
+            console.log('Playing sound ' + sound ');
+        });
     }
 
     var lang = ((navigator.language || navigator.userLanguage) == 'ja') ? 'ja' : 'en';
@@ -42,6 +47,7 @@
             turn_left: 'turn left %n degrees',
             move_forward: 'move forward %n steps',
             move_backward: 'move backward %n steps'
+	    play_sound: 'Play %n sound'	
         },
     }
 
@@ -51,6 +57,7 @@
             [' ', 'MiP: ' + locale[lang].turn_left, 'left', 90],
             [' ', 'MiP: ' + locale[lang].move_forward, 'forward'],
             [' ', 'MiP: ' + locale[lang].move_backward, 'backward']
+            [' ', 'MiP: ' + locale[lang].play_sound, 'play']
         ]
     };
 
