@@ -15,7 +15,7 @@
         $.get('http://localhost:8080/left?degrees=' + degrees, null, function() {
             console.log('turn left ' + degrees + ' degrees');
         });
-    }
+    };
 
     ext.forward = function(steps) {
         $.get('http://localhost:8080/forward?steps=' + steps, null, function() {
@@ -27,12 +27,13 @@
         $.get('http://localhost:8080/backward?steps=' + steps, null, function() {
             console.log('move backward ' + steps + ' steps');
         });
+    };
 
     ext.talk = function(sound) {
         $.get('http://localhost:8080/talk?sound=' + sound, null, function() {
             console.log('playing sound ' + sound + '.');
         });
-    }
+    };
 
     var lang = ((navigator.language || navigator.userLanguage) == 'ja') ? 'ja' : 'en';
     var locale = {
