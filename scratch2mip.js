@@ -10,19 +10,19 @@
             console.log('turn right ' + degrees + ' degrees');
         });
     };
-    
+
     ext.left = function(degrees) {
         $.get('http://localhost:8080/left?degrees=' + degrees, null, function() {
             console.log('turn left ' + degrees + ' degrees');
         });
     }
-    
+
     ext.forward = function(steps) {
         $.get('http://localhost:8080/forward?steps=' + steps, null, function() {
             console.log('move forward ' + steps + ' steps');
         });
     };
-    
+
     ext.backward = function(steps) {
         $.get('http://localhost:8080/backward?steps=' + steps, null, function() {
             console.log('move backward ' + steps + ' steps');
@@ -30,7 +30,7 @@
 
     ext.sound = function(sound) {
         $.get('http://localhost:8080/backward?sound=' + sound, null, function() {
-            console.log('Playing sound ' + sound ');
+            console.log('Playing sound ' + 'sound ');
         });
     }
 
@@ -47,7 +47,7 @@
             turn_left: 'turn left %n degrees',
             move_forward: 'move forward %n steps',
             move_backward: 'move backward %n steps'
-	    play_sound: 'Play %n sound'	
+	    play_sound: 'Play %n sound'
         },
     }
 
