@@ -1,6 +1,7 @@
 var net = require('net');
 var STEPS = 10;
 var DEGREES = 90;
+var SOUND_FILE = 22;
 var SCRATCH_PORT = 42001;
 
 var mip = require('./index');
