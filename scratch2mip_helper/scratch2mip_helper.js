@@ -112,9 +112,9 @@ dispatcher.onGet('/left', function(req, res) {
 dispatcher.onGet('/talk', function(req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('talk');
-  var sound= getQueryObj(req).sound;
+  var sound = parseInt(getQueryObj(req).sound, 10);
 
   selectedRobot.playMipSound(sound, 1, 8, function(err) {
-    console.log('Play sound ' + sound );
+    console.log('Play sound # ' + sound );
   });
 });
