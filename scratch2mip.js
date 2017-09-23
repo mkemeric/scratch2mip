@@ -31,7 +31,7 @@
 
     ext.talk = function(sound) {
         $.get('http://localhost:8080/talk?sound=' + sound, null, function() {
-            console.log('playing sound ' + sound + '.');
+            console.log('playing sound ' + sound );
         });
     };
 
@@ -41,14 +41,15 @@
             turn_right: '右に %n 度回す',
             turn_left: '左に %n 度回す',
             move_forward: '%n 歩前進させる',
-            move_backward: '%n 歩後退させる'
+            move_backward: '%n 歩後退させる',
+            play_sound: 'Play %n sound'
         },
         en: {
             turn_right: 'turn right %n degrees',
             turn_left: 'turn left %n degrees',
             move_forward: 'move forward %n steps',
             move_backward: 'move backward %n steps',
-            play_sound: 'Play %n sound'
+            play_sound: 'play %n sound'
         },
     }
 
