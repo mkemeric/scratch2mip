@@ -30,7 +30,7 @@
 
     ext.talk = function(sound) {
         $.get('http://localhost:8080/talk?sound=' + sound, null, function() {
-            console.log('Playing sound ' + sound);
+            console.log('playing sound ' + sound + '.');
         });
     }
 
@@ -46,7 +46,7 @@
             turn_right: 'turn right %n degrees',
             turn_left: 'turn left %n degrees',
             move_forward: 'move forward %n steps',
-            move_backward: 'move backward %n steps'
+            move_backward: 'move backward %n steps',
             play_sound: 'Play %n sound'
         },
     }
