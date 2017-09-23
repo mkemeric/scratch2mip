@@ -47,7 +47,7 @@
             turn_left: 'turn left %n degrees',
             move_forward: 'move forward %n steps',
             move_backward: 'move backward %n steps'
-	    play_sound: 'Play %n sound'
+	          play_sound: 'Play %n sound'
         },
     }
 
