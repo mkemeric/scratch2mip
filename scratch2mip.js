@@ -28,8 +28,8 @@
             console.log('move backward ' + steps + ' steps');
         });
 
-    ext.sound = function(sound) {
-        $.get('http://localhost:8080/backward?sound=' + sound, null, function() {
+    ext.talk = function(sound) {
+        $.get('http://localhost:8080/talk?sound=' + sound, null, function() {
             console.log('Playing sound ' + sound);
         });
     }
