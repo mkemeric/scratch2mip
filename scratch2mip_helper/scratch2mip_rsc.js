@@ -51,6 +51,7 @@ client.connect(SCRATCH_PORT, '127.0.0.1', function() {
     broadcast('backward');
     broadcast('right');
     broadcast('left');
+    broadcast('talk');
 });
 
 client.on('data', function(data) {
@@ -78,8 +79,8 @@ client.on('data', function(data) {
                     console.log('Drive to Left ' + DEGREES * -1 + ' degrees');
                 });
             case 'talk':
-                selectedRobot.playMipSound(sound, 1, 8, function(err) {
-                    console.log('Play sound ' + sound );
+                selectedRobot.playMipSound(SOUND_FILE, 1, 8, function(err) {
+                    console.log('Play sound ' + SOUND_FILE );
                 });
                 break;
                 break;
