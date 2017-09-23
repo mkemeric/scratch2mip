@@ -114,7 +114,7 @@ dispatcher.onGet('/talk', function(req, res) {
   res.end('talk');
   var sound= getQueryObj(req).sound;
 
-  selectedRobot.playMipSound(sound, 1, 8,function(err) {
-    console.log('Play sound ' + sound + "at " + volume );
+  selectedRobot.playMipSound(sound, 1, 8, function(err) {
+    console.log('Play sound ' + sound );
   });
 });

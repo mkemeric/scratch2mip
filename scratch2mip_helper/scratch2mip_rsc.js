@@ -77,6 +77,11 @@ client.on('data', function(data) {
                 selectedRobot.driveDistanceByCm(0, DEGREES * -1, function(err) {
                     console.log('Drive to Left ' + DEGREES * -1 + ' degrees');
                 });
+            case 'talk':
+                selectedRobot.playMipSound(sound, 1, 8, function(err) {
+                    console.log('Play sound ' + sound );
+                });
+                break;
                 break;
             default: break;
         }
