@@ -59,7 +59,7 @@
             [' ', 'MiP: ' + locale[lang].turn_left, 'left', 90],
             [' ', 'MiP: ' + locale[lang].move_forward, 'forward'],
             [' ', 'MiP: ' + locale[lang].move_backward, 'backward'],
-            [' ', 'MiP: ' + locale[lang].play_sound, 'talk', 10]
+            [' ', 'MiP: ' + locale[lang].play_sound, 'talk', 22]
         ]
     };
 
