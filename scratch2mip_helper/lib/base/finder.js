@@ -10,10 +10,10 @@ function BaseFinder() {
 //scan robot by product id
 BaseFinder.prototype.scan = function(productId, callback) {
 	var self = this;
-	
+
 	noble.on("stateChange", function(state) {
 		logger.info(this, arguments);
-		
+
 		if (state === "poweredOn") {
 			noble.startScanning();
 			logger.info(this, arguments, "startScanning");
@@ -22,14 +22,15 @@ BaseFinder.prototype.scan = function(productId, callback) {
 			callback("invalid status: "+state, null);
 		}
 	});
-	
+
 	noble.on("discover", function(peripheral) {
+		noble.stopScanning();
 		if (BaseRobot.readProductId(peripheral) === productId) {
 			var foundRobot = self.createRobot(peripheral);
 			self.foundRobots.push(foundRobot);
-			
+
 			logger.info(this, arguments, "foundRobot:"+foundRobot);
-			
+
 			callback(null, self.foundRobots);
 		}
 	});
@@ -43,14 +44,15 @@ BaseFinder.prototype.createRobot = function(peripheral) {
 //connect the robot
 BaseFinder.prototype.connect = function(robot, callback) {
 	var self = this;
-	
+
+
 	robot.connect(function(err) {
 		if (err == null) {
 			self.connectedRobots.push(robot);
-			
+
 			logger.info(self, arguments, "connected:"+robot);
 		}
-		
+
 		callback(err);
 	});
 }
