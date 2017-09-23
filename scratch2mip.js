@@ -30,7 +30,7 @@
 
     ext.sound = function(sound) {
         $.get('http://localhost:8080/backward?sound=' + sound, null, function() {
-            console.log('Playing sound ' + 'sound ');
+            console.log('Playing sound ' + sound);
         });
     }
 
